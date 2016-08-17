@@ -1,0 +1,20 @@
+/*
+ * merge_sort.c
+ *
+ *  Created on: Aug 11, 2016
+ *      Author: wenjian
+ */
+
+/**
+ * divide and conquer
+ */
+#include"several_algs.h"
+int merge_sort(int ori_array[], int left, int right){
+	if(left < right){
+		int middle = (left + right)/2;
+		merge_sort(ori_array, left, middle);
+		merge_sort(ori_array, middle+1, right);
+		merge(ori_array, left, middle, right);
+		copy(ori_array, tmp, left, right);
+	}
+}

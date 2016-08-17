@@ -1,0 +1,17 @@
+/*
+ * queue.h
+ *
+ *  Created on: Aug 15, 2016
+ *      Author: wenjian
+ */
+
+#ifndef QUEUE_H_
+#define QUEUE_H_
+
+struct Queue{
+	int *data;
+	int queue_size;
+	int head;
+	int rail;
+};
+#endif /* QUEUE_H_ */

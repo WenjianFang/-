@@ -1,0 +1,14 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 10, 2016
+ *      Author: wenjian
+ */
+
+#include<stdio.h>
+int main(int argc, char* argv[]){
+	int a;
+	scanf("%d\n", &a);
+	printf("%d\n", a);
+	return 0;
+}

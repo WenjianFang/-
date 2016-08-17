@@ -1,0 +1,16 @@
+/*
+ * stack.h
+ *
+ *  Created on: Aug 14, 2016
+ *      Author: wenjian
+ */
+
+#ifndef STACK_H_
+#define STACK_H_
+
+#define INIT_CAPACITY 10
+
+struct Stack{
+	int data[];
+};
+#endif /* STACK_H_ */

@@ -1,0 +1,9 @@
+
+public class BinarySearchTree {
+	BinaryTreeNode root;
+	
+	public BinaryTreeNode initBinarySearchTree(){
+		root = new BinaryTreeNode();
+		return root;
+	}
+}

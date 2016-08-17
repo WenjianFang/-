@@ -1,0 +1,8 @@
+
+public class BinarySearchTree {
+	BinaryTreeNode root;
+	
+	public BinaryTreeNode createBinarySearchTree(int[] array){
+		
+	}
+}

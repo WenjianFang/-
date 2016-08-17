@@ -1,0 +1,111 @@
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+
+public class BinaryTree<T> {
+
+	private BinaryTreeNode<T> root = new BinaryTreeNode<>();
+	
+	private ArrayList<T> preOrderList;
+	private ArrayList<T> inOrderList;
+	private ArrayList<T> postOrderList;
+	
+	public BinaryTreeNode<T> getRoot(){
+		return this.root;
+	}
+	public ArrayList<T> getPreOrderList(){
+		return this.preOrderList;
+	}
+	public ArrayList<T> getInOrderList(){
+		return this.inOrderList;
+	}
+	public ArrayList<T> getPostOrderList(){
+		return this.postOrderList;
+	}
+	public BinaryTreeNode<T> createBinaryTree(T[] array){
+		Queue<BinaryTreeNode<T>> queue = new LinkedList<>();
+		queue.add(this.root);
+		int count = 1;
+		for(int i=0; i<array.length; i++){
+			BinaryTreeNode<T> pNode = queue.poll();
+			pNode.data = array[i];
+			if(count < array.length){
+				if(count == (array.length-1)){
+					BinaryTreeNode<T> lNode = new BinaryTreeNode<>();
+					pNode.lChild = lNode;
+					queue.add(lNode);
+					count++;
+				}
+				else{
+					BinaryTreeNode<T> lNode = new BinaryTreeNode<>();
+					BinaryTreeNode<T> rNode = new BinaryTreeNode<>();
+					pNode.lChild = lNode;
+					pNode.rChild = rNode;
+					queue.add(lNode);
+					queue.add(rNode);
+					count+=2;
+				}
+			}
+		}
+		
+		return this.root;
+	}
+	
+	public void preOrderRecu(BinaryTreeNode<T> treeRoot){
+		
+		BinaryTreeNode<T> tmp = treeRoot;
+		if(tmp == null) return;
+		else{
+			preOrderList.add(tmp.data);
+			//System.out.print(" "+tmp.data);
+			preOrderRecu(tmp.lChild);
+			preOrderRecu(tmp.rChild);
+		}
+	}
+	
+	public void preOrder(BinaryTreeNode<T> treeRoot){
+		
+		BinaryTreeNode<T> tmp = treeRoot;
+		Stack<BinaryTreeNode<T>> stack = new Stack<>();
+		//stack.push(treeRoot);
+		while((tmp!=null) || (!stack.empty())){
+			while(tmp != null){
+				preOrderList.add(tmp.data);
+				stack.push(tmp);
+				tmp = tmp.lChild;
+			}
+			if(!stack.empty()){
+			tmp = stack.pop();
+			tmp = tmp.rChild;
+			}
+		}
+	}
+	
+	public void inOrderRecu(BinaryTreeNode<T> treeRoot){
+		
+		BinaryTreeNode<T> tmp = treeRoot;
+		if(tmp == null) return;
+		else{
+			
+			inOrderRecu(tmp.lChild);
+			inOrderList.add(tmp.data);
+			//System.out.print(" "+tmp.data);
+			inOrderRecu(tmp.rChild);
+		}
+	}
+	public void postOrderRecu(BinaryTreeNode<T> treeRoot){
+		
+		BinaryTreeNode<T> tmp = treeRoot;
+		if(tmp == null) return;
+		else{
+			
+			postOrderRecu(tmp.lChild);
+			postOrderRecu(tmp.rChild);
+			postOrderList.add(tmp.data);
+			//System.out.print(" "+tmp.data);
+		}
+	}
+}

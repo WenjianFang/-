@@ -1,0 +1,3 @@
+main.d: ../main.c ../link_list.h
+
+../link_list.h:

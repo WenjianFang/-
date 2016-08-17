@@ -1,0 +1,15 @@
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] ori_array = {3, 4, 20, -3, 29, 4, 59, 12, 20};
+		SortService ss = new InsertSortImpl();
+		ss.sort(ori_array, ori_array.length);
+		System.out.print(ori_array.length);
+		UtilTool.print("insert_sort", ori_array);
+	}
+
+}

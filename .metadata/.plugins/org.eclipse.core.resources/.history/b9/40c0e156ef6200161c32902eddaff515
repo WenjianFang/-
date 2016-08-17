@@ -1,0 +1,21 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 15, 2016
+ *      Author: wenjian
+ */
+#include<stdlib.h>
+#include<stdio.h>
+#include"binary_search_tree.h"
+
+int main(int argc, char* argv){
+	int array[] = {2, 23, 8, 19, 10, 22, 34};
+	int n = 7;
+	int element = 23;
+
+	struct BSTNode* root = create_bstree(array, n);
+
+	struct BSTNode* p = bstree_search(root, element);
+	printf("search element is %d\n", p->data);
+	return 0;
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;main.c&apos; to &apos;str&apos;" description="Move &apos;main.c&apos; to &apos;str&apos;" destination="/str" element1="/Sort/main.c" element2="/Sort/str.c" element3="/Sort/str.h" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="3" stamp="1471335917483" updateReferences="true"/>
+</session>

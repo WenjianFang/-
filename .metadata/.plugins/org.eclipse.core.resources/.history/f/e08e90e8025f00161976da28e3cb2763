@@ -1,0 +1,14 @@
+/*
+ * bubble_sort.c
+ *
+ *  Created on: Aug 10, 2016
+ *      Author: wenjian
+ */
+
+/**
+ * bubble sort
+ * stable
+ * time: worst, O(n^2); average, O(n^2); best, O(n)
+ * auxiliary: O(1)
+ */
+int bubble_sort();

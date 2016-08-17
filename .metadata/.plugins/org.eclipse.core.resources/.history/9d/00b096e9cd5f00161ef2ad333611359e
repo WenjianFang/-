@@ -1,0 +1,9 @@
+
+public final class UtilTool {
+	private UtilTool(){}
+	public static void swap(int[] num, int i, int j){
+		int tmp = num[i];
+		num[i] = num[j];
+		num[j] = tmp;
+	}
+}

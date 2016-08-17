@@ -1,0 +1,17 @@
+/*
+ * swap.c
+ *
+ *  Created on: Aug 10, 2016
+ *      Author: wenjian
+ */
+/**
+ * swap the two value
+ */
+#include "several_algs.h"
+
+void swap(int* a, int* b){
+	int tmp = 0;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}

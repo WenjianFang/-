@@ -1,0 +1,12 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 10, 2016
+ *      Author: wenjian
+ */
+
+#include<stdio.h>
+int main(int argc, char* argv[]){
+	printf("hello world\n");
+	return 0;
+}

@@ -1,0 +1,20 @@
+/*
+ * heap_sort.c
+ *
+ *  Created on: Aug 11, 2016
+ *      Author: wenjian
+ */
+
+/**
+ *heap sort
+ *unstable
+ *time: worst, O(nlogn); average, O(nlogn); best, O(nlogn)
+ *auxiliary: O(1)
+ */
+/**
+ * all the index from 0 --> n
+ * max heap: parent node >= child node for all the binary tree and sub binary tree
+ * parent of i-th node is (i-1)/2, and child of i-th node is 2*i+1 and 2*i+2
+ * assume i-th node i on j-th level and k-th position, so i=2^(j-1)+k
+ */
+#include"several_algs.h"

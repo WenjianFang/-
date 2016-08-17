@@ -1,0 +1,15 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 10, 2016
+ *      Author: wenjian
+ */
+#define NUM 100
+#include<stdio.h>
+#include"several_algs.h"
+int main(int argc, char* argv[]){
+	int ori_array[] = {3,4,2,1,-2,5,6,9,10,-3,5};
+	int n = 11;
+	int ret = insert_sort(ori_array, n);
+	return ret;
+}

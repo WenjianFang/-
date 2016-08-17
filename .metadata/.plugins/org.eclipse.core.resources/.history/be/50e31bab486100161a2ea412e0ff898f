@@ -1,0 +1,160 @@
+/**
+ * BinaryTree
+ * variables contains a root and the getter
+ * Methods:create binary tree and get specified order
+ */
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+
+public class BinaryTree<T> {
+
+	private BinaryTreeNode<T> root = new BinaryTreeNode<>();
+	
+	
+	public BinaryTreeNode<T> getRoot(){
+		return this.root;
+	}
+
+	public BinaryTreeNode<T> createBinaryTree(T[] array){
+		Queue<BinaryTreeNode<T>> queue = new LinkedList<>();
+		queue.add(this.root);
+		int count = 1;
+		for(int i=0; i<array.length; i++){
+			BinaryTreeNode<T> pNode = queue.poll();
+			pNode.data = array[i];
+			if(count < array.length){
+				if(count == (array.length-1)){
+					BinaryTreeNode<T> lNode = new BinaryTreeNode<>();
+					pNode.lChild = lNode;
+					queue.add(lNode);
+					count++;
+				}
+				else{
+					BinaryTreeNode<T> lNode = new BinaryTreeNode<>();
+					BinaryTreeNode<T> rNode = new BinaryTreeNode<>();
+					pNode.lChild = lNode;
+					pNode.rChild = rNode;
+					queue.add(lNode);
+					queue.add(rNode);
+					count+=2;
+				}
+			}
+		}
+		
+		return this.root;
+	}
+	
+	public ArrayList<T> preOrderRecu(BinaryTreeNode<T> treeRoot){
+		ArrayList<T> preOrderList = new ArrayList<>();
+		preOrderRecuInside(treeRoot, preOrderList);
+		return preOrderList;
+	}
+	private void preOrderRecuInside(BinaryTreeNode<T> treeRoot, ArrayList<T> preOrderList){
+		BinaryTreeNode<T> tmp = treeRoot;
+		if(tmp == null) return;
+		else{
+			preOrderList.add(tmp.data);
+			//System.out.print(" "+tmp.data);
+			preOrderRecuInside(tmp.lChild, preOrderList);
+			preOrderRecuInside(tmp.rChild, preOrderList);
+		}
+	}
+	
+	public ArrayList<T> preOrder(BinaryTreeNode<T> treeRoot){
+		ArrayList<T> preOrderList = new ArrayList<>();
+		BinaryTreeNode<T> tmp = treeRoot;
+		Stack<BinaryTreeNode<T>> stack = new Stack<>();
+		//stack.push(treeRoot);
+		while((tmp!=null) || (!stack.empty())){
+			while(tmp != null){
+				preOrderList.add(tmp.data);
+				stack.push(tmp);
+				tmp = tmp.lChild;
+			}
+			if(!stack.empty()){
+			tmp = stack.pop();
+			tmp = tmp.rChild;
+			}
+		}
+		return preOrderList;
+	}
+	
+	//
+	public ArrayList<T> inOrderRecu(BinaryTreeNode<T> treeRoot){
+		ArrayList<T> inOrderList = new ArrayList<>();
+		inOrderRecuInside(treeRoot, inOrderList);
+		return inOrderList;
+	}
+	private void inOrderRecuInside(BinaryTreeNode<T> treeRoot, ArrayList<T> inOrderList){
+		BinaryTreeNode<T> tmp = treeRoot;
+		if(tmp == null) return;
+		else{
+			
+			inOrderRecuInside(tmp.lChild, inOrderList);
+			inOrderList.add(tmp.data);
+			//System.out.print(" "+tmp.data);
+			inOrderRecuInside(tmp.rChild, inOrderList);
+		}
+	}
+	
+	public ArrayList<T> inOrder(BinaryTreeNode<T> treeRoot){
+		ArrayList<T> inOrderList = new ArrayList<>();
+		BinaryTreeNode<T> tmp = treeRoot;
+		Stack<BinaryTreeNode<T>> stack = new Stack<>();
+		
+		while((tmp != null) || (!stack.empty())){
+			while(tmp != null){
+				stack.push(tmp);
+				tmp = tmp.lChild;
+			}
+			if(!stack.empty()){
+				tmp = stack.pop();
+				inOrderList.add(tmp.data);
+				tmp = tmp.rChild;
+			}
+		}
+		
+		return inOrderList;
+	}
+	
+	//
+	public ArrayList<T> postOrderRecu(BinaryTreeNode<T> treeRoot){
+		ArrayList<T> postOrderList = new ArrayList<>();
+		postOrderRecuInside(treeRoot, postOrderList);
+		return postOrderList;
+	}
+	private void postOrderRecuInside(BinaryTreeNode<T> treeRoot, ArrayList<T> postOrderList){
+		BinaryTreeNode<T> tmp = treeRoot;
+		if(tmp == null) return;
+		else{
+			postOrderRecuInside(tmp.lChild, postOrderList);
+			postOrderRecuInside(tmp.rChild, postOrderList);
+			postOrderList.add(tmp.data);
+			//System.out.print(" "+tmp.data);
+		}
+	}
+	
+	public ArrayList<T> postOrder(BinaryTreeNode<T> treeRoot){
+		ArrayList<T> postOrderList = new ArrayList<>();
+		BinaryTreeNode<T> tmp = treeRoot;
+		BinaryTreeNode<T> pre = null;
+		Stack<BinaryTreeNode<T>> stack = new Stack<>();
+		stack.push(tmp);
+		while(!stack.empty()){
+			tmp = stack.peek();
+			if(((tmp.lChild==null)&&(tmp.rChild==null))||((pre==tmp.lChild)||(pre==tmp.rChild))){
+				postOrderList.add(tmp.data);
+				stack.pop();
+				pre = tmp;
+			}
+			else{
+				if(tmp.rChild!=null) stack.push(tmp.rChild);
+				if(tmp.lChild!=null) stack.push(tmp.lChild);
+			}
+		}
+		return postOrderList;
+	}
+}

@@ -1,0 +1,12 @@
+/*
+ * insert_sort.c
+ *
+ *  Created on: Aug 10, 2016
+ *      Author: wenjian
+ */
+#include<stdio.h>
+#include"several_algs.h"
+
+int insert_sort(int ori_array, int n){
+
+}

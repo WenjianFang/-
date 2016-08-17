@@ -1,0 +1,19 @@
+/*
+ * binary_search_tree.c
+ *
+ *  Created on: Aug 15, 2016
+ *      Author: wenjian
+ */
+#include<stdlib.h>
+#include<stdio.h>
+
+struct BSTNode* create_bstree(int array[], int n){
+	if(n==0) return NULL;
+	struct BSTNode* root = (struct BSTNode*)malloc(struct BSTNode);
+
+	int i = 0;
+	for(i=0; i<n; i++){
+		struct BSTNode* tmp = (struct BSTNode*)malloc(struct BSTNode);
+
+	}
+}

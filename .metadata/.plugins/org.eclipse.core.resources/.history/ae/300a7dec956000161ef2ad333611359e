@@ -1,0 +1,22 @@
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Integer[] array = {2,3,23,9,12,39,42,11};
+		BinaryTree<Integer> tree= new BinaryTree<>();
+		BinaryTreeNode<Integer> root = tree.createBinaryTree(array);
+		tree.preOrderRecu(root);
+		System.out.println("pre order recu: "+tree.getPreOrderList().toString());
+		tree.preOrderRecu(root);
+		System.out.println("pre order: "+tree.getPreOrderList().toString());
+		tree.inOrderRecu(root);
+		System.out.println("in order: "+tree.getInOrderList().toString());
+		tree.postOrderRecu(root);
+		System.out.println("post order: "+tree.getPostOrderList().toString());
+	}
+
+}

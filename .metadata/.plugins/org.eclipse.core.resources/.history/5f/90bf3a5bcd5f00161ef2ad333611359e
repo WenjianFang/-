@@ -1,0 +1,9 @@
+
+public final class UtilTool {
+	private UtilTool(){}
+	public static void swap(Integer a, Integer b){
+		Integer tmp = a;
+		a = b;
+		b = tmp;
+	}
+}

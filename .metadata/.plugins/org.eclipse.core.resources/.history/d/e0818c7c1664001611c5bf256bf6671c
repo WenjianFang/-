@@ -1,0 +1,31 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 16, 2016
+ *      Author: wenjian
+ */
+#include<stdio.h>
+#include"str.h"
+int main(int argc, char* argv[]){
+//	char str[] = "-2324343";
+//	double ret = str_atof(str);
+//	printf("aaresult  is %f\n", ret);
+
+//	int value = 234523;
+//	char str[20];
+//	str_itoa(value, str);
+//	printf("result is %s\n", str);
+
+	int a = 10;
+	int* src = a;
+//
+//	char dest[20]="addzsd f";
+//	str_strcpy(dest, src);
+	//char dest[20];
+	int b=0;
+	int* dest = b;
+	str_memcpy(dest,src,4);
+//	dest[20]='\0';
+	printf("result is %d\n", *dest);
+	return 0;
+}
