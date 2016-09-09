@@ -4,7 +4,6 @@
  *  Created on: Aug 16, 2016
  *      Author: wenjian
  */
-#include<stdio.h>
 #include<stdlib.h>
 #include"str.h"
 
@@ -48,10 +47,6 @@ int str_atoi(const char* str){
 	if(*str == '-') {/*judge the signal*/
 		signal = -1;
 		str++;
-	}
-	if((*str < '0')||(*str > '9')){
-		printf("please input number string\n");
-		exit(1);
 	}
 	int num = 0; /*start calc value*/
 	while(*str != '\0'){

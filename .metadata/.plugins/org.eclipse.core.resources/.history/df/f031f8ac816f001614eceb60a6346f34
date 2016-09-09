@@ -4,7 +4,6 @@
  *  Created on: Aug 16, 2016
  *      Author: wenjian
  */
-#include<stdio.h>
 #include<stdlib.h>
 #include"str.h"
 
@@ -43,26 +42,16 @@ double str_atof(const char* str){
  *in the library
  */
 int str_atoi(const char* str){
-
+	if(str == null) exit();
 	int signal = 1;/*store the signal*/
 	if(*str == '-') {/*judge the signal*/
 		signal = -1;
 		str++;
 	}
-	if((*str < '0')||(*str > '9')){
-		printf("please input number string\n");
-		exit(1);
-	}
 	int num = 0; /*start calc value*/
 	while(*str != '\0'){
-		if((*str >= '0')&&(*str <= '9')){
-			num = num*10 + (*str-'0');/*multiplex 10 every time*/
-			str++;
-		}
-		else{
-			printf("please input number string\n");
-			exit(1);
-		}
+		num = num*10 + (*str-'0');/*multiplex 10 every time*/
+		str++;
 	}
 	return signal*num;
 }

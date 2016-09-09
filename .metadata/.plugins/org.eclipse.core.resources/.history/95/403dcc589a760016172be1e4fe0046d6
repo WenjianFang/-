@@ -20,11 +20,11 @@ int main(int argc, char* argv[]){
 //	int ret_sel = selection_sort(ori_array, n);
 //	print("selection_sort", ori_array, n);
 
-	int ret_qui = quick_sort(ori_array, 0, n-1);
-	print("quick_sort", ori_array, n);
+//	int ret_qui = quick_sort(ori_array, 0, n-1);
+//	print("quick_sort", ori_array, n);
 
-//	int ret_hea = heap_sort(ori_array, n);
-//	print("heap_sort", ori_array, n);
+	int ret_hea = heap_sort(ori_array, n);
+	print("heap_sort", ori_array, n);
 
 //	int ret_mer = merge_sort(ori_array, 0, n-1);
 //	print("merge_sort", ori_array, n);

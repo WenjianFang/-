@@ -19,7 +19,7 @@ static int partition(int ori_array[], int l, int r){
 	int count=0;
 	for(j=l; j<r; j++){
 		if(ori_array[j] < pivot){
-			if(i != j) swap(&ori_array[j], &ori_array[i]);//if the elem less than pivot, swap it to i-th position
+			swap(&ori_array[j], &ori_array[i]);//if the elem less than pivot, swap it to i-th position
 			i++; //increase the i-th position
 
 		}

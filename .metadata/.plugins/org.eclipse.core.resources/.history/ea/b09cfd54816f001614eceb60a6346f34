@@ -9,9 +9,9 @@
 #include<stdio.h>
 #include"str.h"
 int main(int argc, char* argv[]){
-	char str[0];
-	int ret = str_atoi(str);
-	printf("aaresult  is %d\n", ret);
+//	char str[] = "-2324343";
+//	double ret = str_atof(str);
+//	printf("aaresult  is %f\n", ret);
 
 //	int value = 234523;
 //	char str[20];

@@ -1,8 +1,0 @@
-import java.util.Stack;
-
-
-public class DSQueue<T> {
-
-	Stack<T> s1; 
-	Stack<T> s2;
-} 
