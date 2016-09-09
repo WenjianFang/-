@@ -43,6 +43,7 @@ double str_atof(const char* str){
  *in the library
  */
 int str_atoi(const char* str){
+
 	int signal = 1;/*store the signal*/
 	if(*str == '-') {/*judge the signal*/
 		signal = -1;
